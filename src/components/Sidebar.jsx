@@ -31,7 +31,9 @@ export default function Sidebar() {
         </nav>
       </div>
       {/* 💡 하드코딩했던 이름을 전역 데이터로 교체 */}
-      <div className="text-sm text-gray-500 border-t border-gray-800 pt-4">
+      <div
+        className={`text-sm  ${isDarkMode ? "text-gray-100" : "text-gray-300"} border-gray-800 pt-4`}
+      >
         👤 {user}
       </div>
     </div>
