@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom"; // Link와 현재 위치 파악용 훅 임포트
+import { AppContext } from "../context/AppContext";
 
 export default function Sidebar() {
   const location = useLocation();
+
+  // 💡 전역 저장소에서 user 데이터 바로 꺼내 쓰기
+  const { user } = useContext(AppContext);
 
   // 현재 활성화된 페이지에 따라 스타일을 다르게 주는 헬퍼 함수
   const activeClass = (path) =>
@@ -24,8 +28,9 @@ export default function Sidebar() {
           </Link>
         </nav>
       </div>
+      {/* 💡 하드코딩했던 이름을 전역 데이터로 교체 */}
       <div className="text-sm text-gray-500 border-t border-gray-800 pt-4">
-        👤 김프론트
+        👤 {user}
       </div>
     </div>
   );

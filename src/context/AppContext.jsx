@@ -5,7 +5,7 @@ export const AppContext = createContext();
 
 // 2. 우주선처럼 앱 전체를 감싸서 데이터를 뿌려줄 Provider 컴포넌트 정의
 export function AppProvider({ children }) {
-  const [user, setUser] = useState("김프론트");
+  const [user, setUser] = useState("user");
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   // 다크모드 토글 함수
