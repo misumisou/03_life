@@ -6,7 +6,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   // 💡 전역 저장소에서 user 데이터 바로 꺼내 쓰기
-  const { user } = useContext(AppContext);
+  const { user, isDarkMode } = useContext(AppContext);
 
   // 현재 활성화된 페이지에 따라 스타일을 다르게 주는 헬퍼 함수
   const activeClass = (path) =>
@@ -15,7 +15,9 @@ export default function Sidebar() {
       : "block px-4 py-2 rounded text-gray-400 hover:bg-gray-800 hover:text-white transition";
 
   return (
-    <div className="w-full md:w-64 bg-amber-950 text-white p-6 flex flex-col justify-between">
+    <div
+      className={`w-full md:w-64 ${isDarkMode ? "bg-amber-900" : "bg-amber-950"}  p-6 flex flex-col justify-between`}
+    >
       <div>
         <h1 className="text-2xl font-bold text-amber-100">MySpace</h1>
         <br />

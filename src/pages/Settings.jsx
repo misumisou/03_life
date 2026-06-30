@@ -8,8 +8,14 @@ export default function Settings() {
   return (
     <div>
       <header className="mb-8">
-        <h2 className="text-3xl font-bold text-gray-800">⚙️ 시스템 설정</h2>
-        <p className="text-gray-500 mt-1">대시보드의 환경을 설정합니다.</p>
+        <h2
+          className={`text-3xl font-bold ${isDarkMode ? "text-gray-100" : "text-gray-800"}`}
+        >
+          ⚙️ 시스템 설정
+        </h2>
+        <p className={`mt-1 ${isDarkMode ? "text-gray-300" : "text-gray-500"}`}>
+          대시보드의 환경을 설정합니다.
+        </p>
       </header>
       <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 max-w-md">
         <p className="text-gray-700 font-medium mb-2">사용자 프로필 변경</p>
@@ -24,6 +30,7 @@ export default function Settings() {
           Context API를 통해 전역으로 연결할 예정입니다.
         </p>
       </div>
+      <br />
 
       {/* 다크모드 토글 위젯 */}
       <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex justify-between items-center">
